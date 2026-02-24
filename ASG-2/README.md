@@ -1,18 +1,23 @@
-Student Management REST API
-
+Product Management REST API
 Objective
 
-To build and deploy a REST API using Express.js that handles student data and demonstrates routing, parameters, and filtering.
+To build and deploy a REST API using Express.js that manages product data and demonstrates routing, parameters, filtering, and updating resources.
 
 🛠️ Implemented Routes
 
-GET / → Server status
+GET /products → Get all products
 
-GET /students → Get all students
+GET /products/:id → Get product by ID
 
-GET /students/:id → Get student by ID
+GET /products/category/:categoryName → Get products by category
 
-GET /students/branch/:branchName → Get students by branch
+POST /products → Create new product
+
+PUT /products/:id → Update complete product
+
+PUT /products/:id/stock → Update product stock
+
+PUT /products/:id/price → Update product price
 
 Run Locally
 
@@ -22,6 +27,6 @@ npm start
 
 Open : http://localhost:3000
 
-Deploy link : https://node-assignments-19dr.onrender.com
+Deploy link : https://node-assignments-1-nu0w.onrender.com/products
 
-Documentation : https://documenter.getpostman.com/view/50839394/2sBXcEmg8K
+Documentation : https://documenter.getpostman.com/view/50839394/2sBXcGDekG
