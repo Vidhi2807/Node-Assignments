@@ -38,6 +38,21 @@ app.get("/students/topper", (req, res) => {
 });
 
 
+
+app.get("/students/top4", (req, res) => {
+
+  if (students.length === 0) {
+    return res.status(404).json({ message: "No students found" });
+  }
+
+  const top4Students = [...students]   
+    .sort((a, b) => b.cgpa - a.cgpa)   
+    .slice(0, 4);                      
+
+  res.status(200).json(top4Students);
+});
+
+
 app.get("/students/average", (req, res) => {
 
   if (students.length === 0) {
@@ -52,6 +67,16 @@ app.get("/students/average", (req, res) => {
   });
 });
 
+app.get("/students/average", (req, res) => {
+  
+  if (students.length === 0) {
+    return res.status(404).json({ message: "No students found" });
+  }
+
+  const average = students.map(student => student.cgpa).reduce((sum, cgpa) => sum + cgpa, 0)
+   / students.length;
+  res.status(200).json({ average });
+});
 
 
 app.get("/students/count", (req, res) => {
